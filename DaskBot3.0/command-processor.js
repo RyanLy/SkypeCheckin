@@ -320,7 +320,9 @@ const commandTable = {
 }
 
 function removeMention(msg) {
-  return msg.replace(/\<at.*\<\/at\> /, '');
+  // return msg.replace(/\<at.*\<\/at\> /, '');
+  return msg.replace(/^\@\S*/, '');
+  
 }
 
 module.exports = {
