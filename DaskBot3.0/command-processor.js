@@ -271,7 +271,7 @@ const commandTable = {
     successHandler('https://www.rabb.it/lightbrite');
   },
   'theclub': function(args, data, successHandler, errorHandler) {
-    successHandler('http://www.soulwalrus.club');
+    successHandler('http://www.soulwalrus.me');
   },
   'bot-train-t': function(args, data, successHandler, errorHandler) {
     request
@@ -309,7 +309,7 @@ const commandTable = {
           successHandler(`Give this a listen:\nWeb: ${res.body.result.link}\n<b>${res.body.result.name}</b> by ${res.body.result.artists.join(", ")}`);
         }
         else {
-          errorHandler(`Error: Undefined error! Contact ryan@soulwalrus.club.`);
+          errorHandler(`Error: Undefined error! Contact ryan@soulwalrus.me.`);
         }
       }
       else {
@@ -334,7 +334,7 @@ module.exports = {
       commandTable[command](args, message, successHandler, errorHandler);
     }
     else {
-      errorHandler(`Command <b>${command}</b> not supported. Send suggestions at ryan@soulwalrus.club. \n <b>help</b> for commands.`)
+      errorHandler(`Command <b>${command}</b> not supported. Send suggestions at ryan@soulwalrus.me. \n <b>help</b> for commands.`)
     }
   }
 };
