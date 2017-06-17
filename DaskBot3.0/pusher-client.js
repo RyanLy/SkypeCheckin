@@ -84,7 +84,12 @@ const PusherClient = function(botService) {
         }
       }
       else {
-        console.log(errorMessage);
+        if (!errorMessage) {
+          console.log(errorMessage);          
+        }
+        else {
+          console.log("There was an error. Please try again.");
+        }
       }
     });
   }
