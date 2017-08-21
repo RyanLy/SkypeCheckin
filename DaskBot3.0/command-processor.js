@@ -319,15 +319,17 @@ const commandTable = {
   }
 }
 
-function removeMention(msg) {
+function removeMention(msg, botName) {
   // return msg.replace(/\<at.*\<\/at\> /, '');
-  return msg.replace(/^\@\S*/, '');
+  var re = new RegExp(`^\@${botName}|^${botName}`);
+  return msg.replace(re, '');
   
 }
 
 module.exports = {
   handleCommand: function(message, successHandler, errorHandler) {
-    const parsed = removeMention(message.text).trim().split(/\s+/);
+    const botName = message.address.bot.name;
+    const parsed = removeMention(message.text, botName).trim().split(/\s+/);
     const command = parsed[0];
     const args = parsed.splice(1);
     if (commandTable[command]) {
